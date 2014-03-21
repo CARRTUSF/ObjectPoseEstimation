@@ -12,7 +12,7 @@ USAGE
 
 See OPEMain.cpp for a demonstration of how to use this code. There are two main functions to use:
 
-  o calculateObjectPose(pcl::PointCloud\<pcl::PointXYZRGB\>& selectedObjectPtCloud)
+  a) calculateObjectPose(pcl::PointCloud\<pcl::PointXYZRGB\>& selectedObjectPtCloud)
   
     - Found in ObjectPoseEstimator.[h,cpp]. This function is responsible for calculating the pose
       of a segmented object represented by the PCL point cloud provided. This function assumes that
@@ -21,7 +21,7 @@ See OPEMain.cpp for a demonstration of how to use this code. There are two main 
       which possesses the position and orientation of the object. See the comments in SQParameters.h
       for an explanation.
       
-  o run()
+  b) run()
   
     - Also found ObjectPoseEstimator.[h,cpp]. This function assumes that there is a connected Kinect that
       faces a table-top of objects within viewing range and that the OpenNI drivers are installed. It 
@@ -42,6 +42,7 @@ NOTE
 Regular updates to this code would be carried out in the upcoming weeks, so please keep an eye out. There
 may be a few bugs in this code as error conditions are not handled as yet. Therefore use at your own
 risk. This code is intended for use with Visual Studio 2010 and later. However, this code can be adapted for 
-any system as long as the following libraries are available: Eigen, Boost, VTK, PCL, and OpenCV.
+any system as long as the following libraries are available: Boost, PCL and all libraries required by PCL (Eigen, VTK, Flann, Qt, QHull, OpenNI), and OpenCV.
+
 For any questions or comments, please contact kkduncan@cse.usf.edu
         
