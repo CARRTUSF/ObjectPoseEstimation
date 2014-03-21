@@ -36,5 +36,7 @@ NOTE
 
 Regular updates to this code would be carried out in the upcoming weeks, so please keep an eye out. There
 may be a few bugs in this code as error conditions are not handled as yet. Therefore use at your own
-risk. For any questions or comments, please contact kkdunca@cse.usf.edu
+risk. This code is intended for use with Visual Studio 2010 and later. However, this code can be adapted for 
+any system as long as the following libraries are available: Eigen, Boost, VTK, PCL, and OpenCV.
+For any questions or comments, please contact kkduncan@cse.usf.edu
         
