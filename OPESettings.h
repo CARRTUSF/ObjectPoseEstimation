@@ -31,22 +31,68 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *
  *	\file	OPESettings.h
- *	\brief	Defines macros, constants, types etc. used throughout OPE
+ *	\brief	Defines the settings object used throughout OPE
  *	\author	Kester Duncan
  */
 #pragma once
-#ifndef OPE_COMMON_H_
-#define OPE_COMMON_H_
+#ifndef OPE_SETTINGS_H_
+#define OPE_SETTINGS_H_
+
+
+#include "OPECommon.h"
+
+/** \namespace ope
+ *	Namespace where all the Object Pose Estimation functionality resides
+ */
+namespace ope {
+
+/**
+ * \brief User-customizable program settings for pose estimation process
+ */
+struct OPESettings {
+	/// Minimum depth value for target scene area. Used by the <code>PassThrough</code> filter
+	float minTgtDepth;
+
+	/// Maximum depth value for target scene area
+	float maxTgtDepth;
+
+	/// Minimum height of object hypotheses in the scene
+	float minObjHeight;
+
+	/// Maximum height of object hypotheses in the scene
+	float maxObjHeight;
+
+	/// Maximum voxel size for superquadric fitting
+	float maxVoxelSize;
+
+	/// Minimum voxel size for superquadric fitting
+	float minVoxelSize;
+
+	/// Determines whether status updates are output
+	bool verbose;
+
+	/// Determines the amount of error minimization iterations for superquadric fitting
+	int minIterations;
+
+	/// Determines whether superquadric shape tapering is allowed when estimating pose
+	bool allowTapering;
+
+	/// Object voxel size for downsampling
+	float objVoxelSize;
+
+	/// Show a debugging viewer when point cloud is captured
+	bool doDebug;
+
+	/// Default Constructor
+	OPE_EXPORT OPESettings();
+
+	/// Overloaded assignment operator
+	OPE_EXPORT OPESettings& operator= (const OPESettings& other);
+
+};
+
+} /* ope */
 
 
 
-#if (defined WIN32 || defined _WIN32 || defined WINCE)
-#define OPE_EXPORT __declspec(dllexport)
-#else
-#define OPE_EXPORT
-#endif
-
-
-
-
-#endif /* OPE_COMMON_H_ */
+#endif /* OPE_SETTINGS_H_ */

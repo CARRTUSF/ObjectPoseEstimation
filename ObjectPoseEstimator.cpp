@@ -7,7 +7,7 @@
 #include <pcl/surface/mls.h>
 #include <pcl/surface/impl/mls.hpp>
 
-#include "OPECommon.h"
+#include "OPESettings.h"
 #include "SQTypes.h"
 #include "OPEUtils.h"
 #include "Minimization.h"

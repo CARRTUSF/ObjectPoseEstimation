@@ -44,10 +44,13 @@
     <ClInclude Include="InertiaCalculations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OPECommon.h">
+    <ClInclude Include="OPEUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OPEUtils.h">
+    <ClInclude Include="OPESettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OPECommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,9 +62,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PointCloudCapture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OPECommon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OPEMain.cpp">
@@ -77,6 +77,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SQFitting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OPESettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -114,10 +114,16 @@ double Minimization::funcs(double x, double y, double z,
 	double rotx[11], double roty[11], double rotz[11], 
 	glnparam a, glnparam dFda) {
 
-		double coefx, coefy, coefz, A, B, D, G, F, DA, DB, GD, Gz, R, M, N, nx, ny, nz, nz_p, N1, N2, SAB, CAB;
+		//double coefx, coefy, coefz, A, B, D, G, F, DA, DB, GD, Gz, R, M, N, nx, ny, nz, nz_p, N1, N2, SAB, CAB;
+		//glnparam dx, dy, dz, dxb, dyb, dzb, dA, dB, dD, dG, dR;
+		//double xb, yb, zb, koren;
+		//double O, Omin, Omax, zhat;
+
+		// Eliminated unreferenced local variables
+		double coefx, coefy, coefz, A, B, D, G, F, DA, DB, GD, Gz, R, SAB, CAB;
 		glnparam dx, dy, dz, dxb, dyb, dzb, dA, dB, dD, dG, dR;
 		double xb, yb, zb, koren;
-		double O, Omin, Omax, zhat;
+		double O;
 
 		coefx = (rotx[0]*x + roty[0]*y + rotz[0]*z - (a[8]*rotx[0] + a[9]*roty[0] + a[10]*rotz[0]));
 
@@ -556,7 +562,7 @@ double Minimization::mrqmin(SQParameters& prm, const glndata2& x, glndata F, gln
 	int ndata, glmma a, gllista lista, int mfit, glcovar covar, glcovar alpha, 
 	double alamda, int *n_model_acc) {
 	
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 	double chisq;
 	double poisson, addnoise;
 	glmma da;

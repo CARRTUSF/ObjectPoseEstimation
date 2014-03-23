@@ -9,7 +9,7 @@
 #include <pcl/point_types.h>
 #include <Eigen/Core>
 #include "EigenSolver.h"
-#include "OPECommon.h"
+#include "OPESettings.h"
 #include "SQTypes.h"
 #include "SQFitting.h"
 
@@ -133,8 +133,9 @@ int SQFitting::estimateParameters(const pcl::PointCloud<pcl::PointXYZ>& cloud, S
 
 	// Compute eigenvectors and eigenvalues
 	double	d[3], m_brain[3][3], m_inverse[3][3];
-	double lambdas[3], vectors[3][3];
-	int     nrot;
+	double lambdas[3];
+	double vectors[3][3];
+	int    nrot;
 
 	/*
 	 * Using the covariance matrix, we get its eigenvalues

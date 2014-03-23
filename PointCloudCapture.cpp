@@ -1,7 +1,7 @@
 #include <pcl/io/openni_grabber.h>
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcl/filters/passthrough.h>
-#include "OPECommon.h"
+#include "OPESettings.h"
 #include "OPEUtils.h"
 
 #include "PointCloudCapture.h"

@@ -52,7 +52,7 @@
 #include "pcl/segmentation/extract_clusters.h"
 
 #include "Plane.h"
-#include "OPECommon.h"
+#include "OPESettings.h"
 
 namespace ope {
 

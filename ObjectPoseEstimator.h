@@ -38,7 +38,7 @@
 #ifndef OBJECT_POSE_ESTIMATOR_H__
 #define OBJECT_POSE_ESTIMATOR_H__
 
-#include "OPECommon.h"
+#include "OPESettings.h"
 
 
 namespace pcl {
@@ -91,7 +91,7 @@ public:
 	 * http://www.cse.usf.edu/~kkduncan
 	 * 
 	 */
-	__declspec(dllexport) SQParameters calculateObjectPose(pcl::PointCloud<pcl::PointXYZRGB>& selectedObjectPtCloud);
+	OPE_EXPORT SQParameters calculateObjectPose(pcl::PointCloud<pcl::PointXYZRGB>& selectedObjectPtCloud);
 
 
 	/**
@@ -102,13 +102,13 @@ public:
 	 * and finally return the results in a \a SQParameters object.	 *
 	 * \return An \a SQParameters object containing the 13 superquadric parameters.
 	 */
-	__declspec(dllexport) SQParameters run();
+	OPE_EXPORT SQParameters run();
 	
 	/// Default constructor
-	__declspec(dllexport) ObjectPoseEstimator();
+	OPE_EXPORT ObjectPoseEstimator();
 
 	/// Constructor with settings
-	__declspec(dllexport) ObjectPoseEstimator(const OPESettings& settings);
+	OPE_EXPORT ObjectPoseEstimator(const OPESettings& settings);
 	
 };
 

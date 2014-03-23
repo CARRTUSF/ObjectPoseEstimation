@@ -76,6 +76,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="OPECommon.h" />
+    <ClInclude Include="OPESettings.h" />
     <ClInclude Include="EigenSolver.h" />
     <ClInclude Include="InertiaCalculations.h" />
     <ClInclude Include="Minimization.h" />
@@ -92,7 +93,7 @@
   <ItemGroup>
     <ClCompile Include="InertiaCalculations.cpp" />
     <ClCompile Include="Minimization.cpp" />
-    <ClCompile Include="OPECommon.cpp" />
+    <ClCompile Include="OPESettings.cpp" />
     <ClCompile Include="OPEMain.cpp" />
     <ClCompile Include="ObjectPoseEstimator.cpp" />
     <ClCompile Include="Plane.cpp" />

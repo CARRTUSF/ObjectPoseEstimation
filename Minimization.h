@@ -43,7 +43,7 @@
 
 ////////////// Forward declarations to avoid large headers ////////////////
 namespace pcl {
-	class PointXYZ;
+	struct PointXYZ;
 	template<class T> class PointCloud;
 
 } // pcl

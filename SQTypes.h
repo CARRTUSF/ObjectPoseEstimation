@@ -39,7 +39,7 @@
 #define __SHAPEFITTINGTYPES_H__
 
 #include <iostream>
-#include "OPECommon.h"
+#include "OPESettings.h"
 
 /** \namespace ope
  *	Namespace where all the Object Pose Estimation functionality resides
@@ -60,9 +60,9 @@ typedef enum ParameterType {
 /// Defines the upper and lower limits for superquadric parameters
 typedef struct ParameterLimits {
 	ParameterType type;			
-	float value;
-	float lowerBound;
-	float upperBound;
+	double value;
+	double lowerBound;
+	double upperBound;
 	ParameterLimits() : value(0.f), lowerBound(0.f), upperBound(0.f) {}
 
 } ParameterLimits;
@@ -101,35 +101,35 @@ typedef struct MinimizationParameters {
 class SQParameters{
 public:
 	/// The shape dimension for the x-axis
-	float a1;
+	double a1;
 	/// The shape dimension for the y-axis
-	float a2;
+	double a2;
 	/// The shape dimension for the z-axis
-	float a3;
+	double a3;
 
 	/// The north-south superquadric shape parameter
-	float e1;
+	double e1;
 	/// The east-west superquadric shape parameter
-	float e2;
+	double e2;
 
 	/// The x-axis location of the centroid of this superquadric
-	float px;
+	double px;
 	/// The y-axis location of the centroid of this superquadric
-	float py;
+	double py;
 	/// The z-axis location of the centroid of this superquadric
-	float pz;
+	double pz;
 
 	/// Euler rotation angle along the x-axis
-	float phi;
+	double phi;
 	/// Euler rotation angle along the y-axis
-	float theta;
+	double theta;
 	/// Euler rotation angle along the x-axis
-	float psi;
+	double psi;
 
 	/// Tapering parameter along the x-axis
-	float kx;
+	double kx;
 	/// Tapering parameter along the y-axis
-	float ky;
+	double ky;
 
 	/// Index of the principal axis in the calculated rotation matrix
 	int principalAxis;
@@ -142,34 +142,34 @@ public:
 
 	/// Default Constructor
 	SQParameters() {		
-		a1 = 0.0f; a2 = 0.0f; a3 = 0.0f;
-		e1 = 1.0f; e2 = 1.0f; 
-		px = 0.0f; py = 0.0f; pz = 0.0f;
-		phi = 0.0f; theta = 0.0f; psi = 0.0f;
-		kx = 0.0f; ky = 0.0f;
+		a1 = 0.0; a2 = 0.0; a3 = 0.0;
+		e1 = 1.0; e2 = 1.0; 
+		px = 0.0; py = 0.0; pz = 0.0;
+		phi = 0.0; theta = 0.0; psi = 0.0;
+		kx = 0.0; ky = 0.0;
 		principalAxis = 0;
 		majorAxis = 0;
 		minorAxis = 0;
 
 		min.iterations = 20;
 		min.a1.type = BOUNDED;
-		min.a1.lowerBound = 0.020f;
-		min.a1.upperBound = 0.30f;
-		a1 = 0.05f;
+		min.a1.lowerBound = 0.020;
+		min.a1.upperBound = 0.30;
+		a1 = 0.05;
 	
 		min.a2.type = BOUNDED;
-		min.a2.lowerBound = 0.020f;
-		min.a2.upperBound = 0.30f;
-		a2 = 0.05f;
+		min.a2.lowerBound = 0.020;
+		min.a2.upperBound = 0.30;
+		a2 = 0.05;
 
 		min.a3.type = BOUNDED;
-		min.a3.lowerBound = 0.020f;
-		min.a3.upperBound = 0.30f;
-		a3 = 0.05f;
+		min.a3.lowerBound = 0.020;
+		min.a3.upperBound = 0.30;
+		a3 = 0.05;
 
 		min.e1.type = BOUNDED;
-		min.e1.lowerBound = 0.1f;
-		min.e1.upperBound = 2.0f;
+		min.e1.lowerBound = 0.1;
+		min.e1.upperBound = 2.0;
 		e1 = 1;
 
 		min.e2.type = BOUNDED;
@@ -180,25 +180,25 @@ public:
 		min.phi.type = UNLIMITED;
 		min.theta.type = UNLIMITED;
 		min.psi.type = UNLIMITED;
-		min.phi.value = 1.0f;
-		min.theta.value = 1.0f;
-		min.psi.value = 1.0f;
+		min.phi.value = 1.0;
+		min.theta.value = 1.0;
+		min.psi.value = 1.0;
 	
 		min.px.type = UNLIMITED;
 		min.py.type = UNLIMITED;
 		min.pz.type = UNLIMITED;		
 		
 		min.kx.type = BOUNDED;
-		min.kx.lowerBound = -1.0f;
-		min.kx.upperBound = 1.0f;
-		min.kx.value = 0.0f;
-		kx = 1.0f;
+		min.kx.lowerBound = -1.0;
+		min.kx.upperBound = 1.0;
+		min.kx.value = 0.0;
+		kx = 1.0;
 
 		min.ky.type = BOUNDED;
-		min.ky.lowerBound = -1.0f;
-		min.ky.upperBound = 1.0f;
-		min.ky.value = 0.0f;
-		ky = 1.0f;
+		min.ky.lowerBound = -1.0;
+		min.ky.upperBound = 1.0;
+		min.ky.value = 0.0;
+		ky = 1.0;
 
 		
 	
